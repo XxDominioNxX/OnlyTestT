@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:onlytestt="clr-namespace:OnlyTestT" 
+             xmlns:Models="clr-namespace:OnlyTestT.Models" 
+             xmlns:local="clr-namespace:OnlyTestT.View"
+             xmlns:viewmodel="clr-namespace:OnlyTestT.ViewModel"
+             x:Class="OnlyTestT.View.ItemsPage"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Обновить" Clicked="clicka"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.BindingContext>
+        <viewmodel:ItemsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#D78BF5</Color>
+        <Color x:Key="Secondary">#8D00A6</Color>
+    </ContentPage.Resources>
+
+    <StackLayout x:Name="stack">
+        
+        <ListView x:Name="SurveyList"
+              HasUnevenRows="True"
+              ItemsSource="{Binding survey_list}"
+              ItemTapped="OnItemTapped"
+               >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal" Padding="20,20,0,20">
+                                <Label Text="Опрос:" FontSize="20" />
+                                <Label Text="{Binding title}" FontSize="20" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+
+
+</ContentPage>

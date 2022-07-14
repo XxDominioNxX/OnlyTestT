@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+       xmlns:onlytestt="clr-namespace:OnlyTestT"
+       xmlns:local="clr-namespace:OnlyTestT.View"
+       x:DataType="onlytestt:MainPage"
+       x:Class="OnlyTestT.MainPage">
+
+    <MenuItem Text="Авторизация" Clicked="OnMenuItemClicked">
+    </MenuItem>
+
+    <FlyoutItem Title="Анкеты">
+        <ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}"/>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Справка">
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutView}"/>
+    </FlyoutItem>
+    
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
+
+
+
+</Shell>

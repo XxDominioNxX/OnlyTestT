@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlyTestT.View.QuestView"
+             xmlns:viewmodel="clr-namespace:OnlyTestT.ViewModel" 
+             x:DataType="viewmodel:QuestViewModel"
+             Shell.NavBarIsVisible="False">
+
+
+    <StackLayout BindingContext="{StaticResource test}">
+       
+        <StackLayout Orientation="Horizontal" Margin="0,30,0,0">
+            <Label Text="   Вопрос №" FontSize="25" FontAttributes="Bold" />
+            <Label Text="{Binding Index_view}" FontSize="25" FontAttributes="Bold" />
+        </StackLayout>
+        <Line x:Name="line" 
+              X1="20" 
+              Y1="10"
+              X2="300"
+              Y2="10"
+              Stroke="#9E42B3"/>
+        <Label Text="{Binding Questions}" TextColor="Black" FontSize="20" Margin="20,0,20,0"/>
+
+        <StackLayout x:Name="answers" Orientation="Vertical" Spacing="15" VerticalOptions="CenterAndExpand" Margin="10,0,0,0">
+           
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+            <Button x:Name="Button_back" Text="Назад" Clicked="Back" HorizontalOptions="FillAndExpand"/>
+            <Button x:Name="Button_next" Text="Далее" Clicked="Next" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        
+        <Button Text="Завершить анкету" Clicked="Happy_End" VerticalOptions="End"/>
+    </StackLayout>
+</ContentPage>
